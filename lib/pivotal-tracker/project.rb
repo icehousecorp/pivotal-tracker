@@ -76,6 +76,7 @@ module PivotalTracker
             xml.name "#{name}"
             xml.iteration_length.integer "#{iteration_length}" unless iteration_length.nil?
             xml.point_scale "#{point_scale}" unless point_scale.nil?
+            xml.week_start_day "#{week_start_day}" unless week_start_day.nil?
           }
         end
         return builder.to_xml
