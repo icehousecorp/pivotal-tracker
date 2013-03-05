@@ -30,6 +30,8 @@ module PivotalTracker
     element :use_https, Boolean
     element :first_iteration_start_time, DateTime
     element :current_iteration_number, Integer
+    element :start_date, DateTime
+    element :time_zone, String
 
     def initialize(attributes={})
       update_attributes(attributes)
@@ -77,6 +79,8 @@ module PivotalTracker
             xml.iteration_length.integer "#{iteration_length}" unless iteration_length.nil?
             xml.point_scale "#{point_scale}" unless point_scale.nil?
             xml.week_start_day "#{week_start_day}" unless week_start_day.nil?
+            xml.start_date "#{start_date}" unless start_date.nil?
+            xml.time_zone "#{time_zone}" unless time_zone.nil?
           }
         end
         return builder.to_xml
